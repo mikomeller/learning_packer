@@ -1,0 +1,10 @@
+- name: Provision Image
+  hosts: default
+  become: true # for user access to run as root 
+
+  tasks: 
+  - name: install apache
+    apt: 
+      update_cache: yes # update cache before specifying modules to install
+      name: apache2 
+      state: latest
